@@ -39,7 +39,8 @@ public class EchoWorker implements Runnable {
      try {
       queue.wait();
      } catch (InterruptedException e) {
-     }
+           System.out.println(e);
+           e.printStackTrace();     }
     }
     dataEvent = queue.remove(0);
    }
@@ -58,6 +59,8 @@ public class EchoWorker implements Runnable {
        try {
            out = rpt1.transform(rpt2.transform(dataEvent.data));
        } catch (Exception e) {
+           System.out.println(e);
+           e.printStackTrace();
        }
        forwardData(dataEvent.client, out);
    }

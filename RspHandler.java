@@ -13,6 +13,8 @@ public class RspHandler {
    try {
     this.wait();
    } catch (InterruptedException e) {
+           System.out.println(e);
+           e.printStackTrace();
    }
   }
   
