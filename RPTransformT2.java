@@ -11,10 +11,9 @@ public class RPTransformT2 implements Transform {
         
         while (start < end) {
             if ((in[start] > 0x40) && (in[start] < 0x5B)) {
-                in[start++] |= 0x20;
-            } else {
-                start++;
-            }
+                in[start] |= 0x20;
+            } 
+            start++;
         }      
     }
         
